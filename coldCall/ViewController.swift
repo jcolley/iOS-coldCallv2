@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var randNumberLabel: UILabel!
     
     let names = [
         "Jay",
@@ -42,6 +43,16 @@ class ViewController: UIViewController {
 
     @IBAction func changeNameButtonPressed(_ sender: UIButton) {
         let rand = Int(arc4random_uniform(UInt32(names.count)))
+        let randNum = Int(arc4random_uniform(5) + 1)
         name.text = names[rand]
+        randNumberLabel.text = String(randNum)
+        
+        if randNum == 1 || randNum == 2 {
+            randNumberLabel.textColor = UIColor.red
+        } else if randNum == 3 || randNum == 4 {
+            randNumberLabel.textColor = UIColor.orange
+        } else if randNum == 5 {
+            randNumberLabel.textColor = UIColor.green
+        }
     }
 }

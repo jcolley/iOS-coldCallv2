@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VN2-Zn-zdu">
-                                <rect key="frame" x="139" y="28" width="96.5" height="48"/>
+                                <rect key="frame" x="140" y="28" width="97" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Pz8-Ag-Zk7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,17 +46,28 @@
                                     <action selector="changeNameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EpA-lG-pcE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-j1-cvo">
+                                <rect key="frame" x="16" y="84" width="343" height="505"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="JqV-j1-cvo" firstAttribute="top" secondItem="VN2-Zn-zdu" secondAttribute="bottom" constant="8" symbolic="YES" id="3zs-g1-tzt"/>
+                            <constraint firstItem="I5M-vd-OHo" firstAttribute="top" secondItem="JqV-j1-cvo" secondAttribute="bottom" constant="8" symbolic="YES" id="6MO-No-7Ec"/>
+                            <constraint firstItem="VN2-Zn-zdu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="DIf-BR-JZb"/>
+                            <constraint firstItem="JqV-j1-cvo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EoX-vg-FG8"/>
+                            <constraint firstItem="VN2-Zn-zdu" firstAttribute="centerX" secondItem="I5M-vd-OHo" secondAttribute="centerX" id="ZoT-cJ-pio"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I5M-vd-OHo" secondAttribute="bottom" constant="8" symbolic="YES" id="cS6-XE-f0g"/>
-                            <constraint firstItem="VN2-Zn-zdu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="flg-Aa-0aX"/>
+                            <constraint firstItem="JqV-j1-cvo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ehr-oS-QG2"/>
                             <constraint firstItem="I5M-vd-OHo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kI9-Vh-nh3"/>
-                            <constraint firstItem="VN2-Zn-zdu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qkC-Jb-HoV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="name" destination="VN2-Zn-zdu" id="aM9-zm-7S9"/>
+                        <outlet property="randNumberLabel" destination="JqV-j1-cvo" id="qGq-BO-M5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
